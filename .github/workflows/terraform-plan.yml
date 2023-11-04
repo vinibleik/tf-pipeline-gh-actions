@@ -1,4 +1,4 @@
-name: Terraform Plan
+name: Workflow Terraform Plan
 on: push
 env:
   AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
@@ -7,15 +7,15 @@ env:
 
 jobs:
   terraform_plan:
-    name: Terraform Plan
+    name: Job Terraform Plan
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
     steps:
-      - name: Checkout
+      - name: Step Checkout
         uses: actions/checkout@v4
-      - name: Terraform Plan
+      - name: Step Terraform Plan
         run: |
           terraform init
           terraform validate
